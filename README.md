@@ -21,7 +21,9 @@ PactTestV2-RandomIntService_manual_adjustments.json
 
 Two first is as produced by respectively program. Third is based on the
 V2-contract by "integer" has been manually edited to "type". That is the only
-contract that can be verified by pact-provider-verifier, like this:
+contract that can be verified by pact-provider-verifier 
+( https://github.com/pact-foundation/pact-provider-verifier ) 
+, like this:
 
 ```
 pact-provider-verifier  PactTestV2-RandomIntService_manual_adjustments.json --provider-base-url http://www2.freefarm.se
