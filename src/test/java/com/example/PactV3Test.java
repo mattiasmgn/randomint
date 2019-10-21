@@ -15,15 +15,15 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
 @PactFolder("contractfiles")
-public class PactTestV2 {
+public class PactV3Test {
     @Rule
-    public PactProviderRule provider = new PactProviderRule("RandomIntService", "localhost", 8123, PactSpecVersion.V2,this);
+    public PactProviderRule provider = new PactProviderRule("RandomIntService", "localhost", 8123, PactSpecVersion.V3,this);
 
-    @Pact(consumer = "PactTestV2")
+    @Pact(consumer = "PactTestV3")
     public RequestResponsePact createPact(PactDslWithProvider builder) {
 
         DslPart body = new PactDslJsonBody()
-                .integerType("randomint",222)
+                .integerType("randomint",333)
                 .asBody();
 
         return builder
