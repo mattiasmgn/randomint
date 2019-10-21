@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 @Provider("RandomIntService") // Set up name of tested provider
 @PactFolder("contractfiles") // Point where to find pacts (See also section Pacts source in documentation)
 
-public class VerifyContract {
+public class VerifyContractTest {
 
     @State("No special state needed")
     public void noSpecialState() {}
