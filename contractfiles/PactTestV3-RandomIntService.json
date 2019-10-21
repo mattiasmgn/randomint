@@ -1,0 +1,62 @@
+{
+  "provider": {
+    "name": "RandomIntService"
+  },
+  "consumer": {
+    "name": "PactTestV3"
+  },
+  "interactions": [
+    {
+      "description": "request for a random integer",
+      "request": {
+        "method": "GET",
+        "path": "/cgi-bin/randomint.cgi"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset\u003dUTF-8"
+        },
+        "body": {
+          "randomint": 333
+        },
+        "matchingRules": {
+          "body": {
+            "$.randomint": {
+              "matchers": [
+                {
+                  "match": "integer"
+                }
+              ],
+              "combine": "AND"
+            }
+          },
+          "header": {
+            "Content-Type": {
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "application/json(;\\s?charset\u003d[\\w\\-]+)?"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": "No special state needed"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.0.1"
+    }
+  }
+}
