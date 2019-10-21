@@ -6,7 +6,7 @@ PactSpecVersion.V2 argument in
     @Rule
     public PactProviderRule provider = new PactProviderRule("RandomIntService", "localhost", 8123, PactSpecVersion.V2,this);
 
-does change the produced contract file (found under target/log)
+does change the produced contract file (found under contractfiles)
 compared to the V3-version, the V2 version still contains the same
 "match": "integer" which is not, to my knowledge, compliant with
 the V2 Pact specification.
